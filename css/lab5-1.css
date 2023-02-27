@@ -11,7 +11,7 @@ body {
 table {
    border: collapse;
    border-spacing: 0;
-   width; 90%;
+   width: 90%;
    margin: 0 auto;
 }
 table tbody td{
@@ -69,3 +69,4 @@ form p {
 .rounded:hover {
    background-color: #7f8dad;
 }
+

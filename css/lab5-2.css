@@ -1,0 +1,40 @@
+fieldset{
+    margin-left: auto;
+    margin-right: auto;    
+    background-color:bisque;
+}
+
+caption{
+    background-color: cyan;
+}
+
+td:hover{
+    background-color:red;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+th,td{
+    font-weight: bold;
+    color:slategray;
+    text-align: center;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+}
+
+.fill:hover{
+    background-color:lightgrey;
+}
+.disable{
+    pointer-events:none;
+}
+.today{
+    background-color: aqua;
+}
+.weekdays{
+    line-height:66%;
+}
