@@ -1,51 +1,27 @@
-function setForm(){
-    var formElement = document.forms[0];
-    formElement.onsubmit = function(e){
-        e.preventDefault();
-        FormCheck()
+window.onload = function (){
+    document.getElementById("mainForm").onsubmit = function(e){
+        var Title = document.getElementsByName("title");
+        var Desc = document.getElementsByName("description");
+        var CheckBox = document.getElementsByName("accept").checked;
+        var formReq = document.getElementsByClassName("required");
+
+        if ( Title.value == "" || Title.value == undefined || Desc.value == "" || Desc.value == undefined|| !CheckBox.checked){
+            e.preventDefault();
+            formReq[0].classList.add("highlight");
+            formReq[1].classList.add("highlight");
         }
 
-    formElement.onchange={
-        function(e){resetElement(e);}
+        if (formReq[0].value && formReq[0].value){
+            document.getElementById("mainForm").submit();
+        }
     }
+    var changeColor = document.getElementsByClassName("required");
+
+    changeColor[0].addEventListener("input", function(){
+    changeColor[0].classList.remove("highlight");
+    })
+
+    changeColor[1].addEventListener("input", function(){
+    changeColor[1].classList.remove("highlight");
+    })
 }
-
-function resetElement(e)
-{
-    e.target.className = "";
-    if(e.target.name == "accept")
-        document.getElementsByClassName("rectangle")[0].className = "rectangle";
-}
-
-function formCheck()
-{
-    var submitForm = true;
-    var elementNames = ["title","description"];
-    for (var i = 0; i < elementNames.length; i++)
-    {
-        var elementValue = (document.getElementsByName(elementNames[i]))[0].value;
-        if(elementValue == "")
-        {
-            document.getElementsByName(elementNames[i])[0].className+=" highlight";
-            if(elementNames[i] == "title" || elementNames[i] == "description")
-            {
-                submitForm = false;
-            }
-        }
-    }   
-
-    var acceptValue = document.getElementsByName("accept")[0].checked;
-    if(acceptValue == false)
-        {
-        document.getElementsByClassName("rectangle")[0].className+=" highlight";
-        submitForm = false;
-        }
-
-
-    if(submitForm == true)
-    {
-        document.forms[0].submit();
-    }
-}
-
-window.onload = setForm;

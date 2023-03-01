@@ -9,10 +9,10 @@ window.onload=function(){
             //Save old and add it back plus a new div with the type added to it
             var oldtext = currentNode.innerHTML;
             currentNode.innerHTML = oldtext + "<div class = 'hoverNode'>"+currentNode.nodeName+"</div>";
-            currentNode.addEventListener("click",clickCheck);
+            currentNode.addEventListener("click",nodeClicked);
         }
     }
-    function clickCheck(){
+    function nodeClicked(){
         alert(currentNode.id + currentNode.parentNode.nodeName);
     }
 

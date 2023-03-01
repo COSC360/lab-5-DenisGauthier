@@ -38,3 +38,11 @@ th,td{
 .weekdays{
     line-height:66%;
 }
+.hoverNode{
+    margin-left: 2px;
+    cursor:pointer;
+    background-color:palegoldenrod;
+    border: 1px black solid;
+    color:black;
+
+}
